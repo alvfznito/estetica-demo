@@ -5,11 +5,11 @@ const cases = [
     title: 'Tratamiento Facial Premium',
     subtitle: 'Protocolo hidratación & luminosidad — 4 sesiones',
     before: {
-      src: 'https://images.unsplash.com/photo-1506863530036-1efeddceb993?auto=format&fit=crop&w=600&q=80',
+      src: 'https://images.unsplash.com/photo-1730288951113-9cc087c14b83?auto=format&fit=crop&w=600&q=80',
       alt: 'Antes del tratamiento facial',
     },
     after: {
-      src: 'https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&w=600&q=80',
+      src: 'https://images.unsplash.com/photo-1581182815808-b6eb627a8798?auto=format&fit=crop&w=600&q=80',
       alt: 'Después del tratamiento facial',
     },
   },
@@ -17,11 +17,11 @@ const cases = [
     title: 'Depilación Láser Integral',
     subtitle: 'Eliminación definitiva del vello — 6 sesiones',
     before: {
-      src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80',
+      src: 'https://images.unsplash.com/photo-1555820585-c5ae44394b79?auto=format&fit=crop&w=600&q=80',
       alt: 'Antes de la depilación láser',
     },
     after: {
-      src: 'https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=600&q=80',
+      src: 'https://images.unsplash.com/photo-1551184451-76b762941ad6?auto=format&fit=crop&w=600&q=80',
       alt: 'Después de la depilación láser',
     },
   },
