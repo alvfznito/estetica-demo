@@ -8,7 +8,6 @@ const navLinks = [
   { label: 'Equipo', href: '#equipo' },
   { label: 'Reseñas', href: '#resenas' },
   { label: 'Contacto', href: '#contacto' },
-  { label: 'Blog', href: '/blog' },
 ]
 
 export default function Navbar() {
