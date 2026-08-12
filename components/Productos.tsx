@@ -1,8 +1,13 @@
+'use client'
+
+import { useState } from 'react'
 import Image from 'next/image'
-import { MessageCircle } from 'lucide-react'
-import { products, wa } from '@/lib/data'
+import { products, formatPrice, type Product } from '@/lib/data'
+import ProductModal from './ProductModal'
 
 export default function Productos() {
+  const [selected, setSelected] = useState<Product | null>(null)
+
   return (
     <section id="productos" className="py-28 px-6 bg-crudo">
       <div className="max-w-6xl mx-auto">
@@ -23,17 +28,18 @@ export default function Productos() {
         {/* Grid 4 cols */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((p) => (
-            <div
-              key={p.name}
-              className="bg-white shadow-soft flex flex-col rounded-sm overflow-hidden"
+            <button
+              key={p.id}
+              onClick={() => setSelected(p)}
+              className="bg-white shadow-soft flex flex-col rounded-sm overflow-hidden text-left group"
             >
               <div className="relative aspect-square overflow-hidden">
                 <Image
-                  src={p.img}
+                  src={p.images[0]}
                   alt={`${p.name} — Valdepeñas Organic Skincare`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="p-5 flex flex-col flex-1">
@@ -43,27 +49,24 @@ export default function Productos() {
                 <p className="font-manrope text-sm text-muted mb-4 flex-1">{p.desc}</p>
                 <div className="flex items-baseline justify-between mb-4">
                   <span className="font-cormorant italic text-2xl font-medium text-champagne">
-                    {p.price}
+                    {formatPrice(p.price)}
                   </span>
                 </div>
-                <a
-                  href={wa(`Hola, me interesa el producto: ${p.name}.`)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 font-manrope text-xs font-semibold tracking-[0.15em] uppercase px-4 py-3 border border-champagne text-champagne hover:bg-champagne hover:text-white transition-colors duration-300 rounded-sm"
-                >
-                  <MessageCircle size={14} strokeWidth={1} />
-                  Consultar por WhatsApp
-                </a>
+                <span className="inline-flex items-center justify-center gap-2 font-manrope text-xs font-semibold tracking-[0.15em] uppercase px-4 py-3 border border-champagne text-champagne group-hover:bg-champagne group-hover:text-white transition-colors duration-300 rounded-sm">
+                  Ver producto
+                </span>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
         <p className="text-center font-manrope text-xs text-muted mt-10 max-w-lg mx-auto">
-          Consulta por WhatsApp la disponibilidad, envíos o reservas en tienda.
+          Tienda de demostración — explora el catálogo, añade productos al carrito y
+          descubre cómo se sentiría comprar directamente desde tu web.
         </p>
       </div>
+
+      <ProductModal product={selected} onClose={() => setSelected(null)} />
     </section>
   )
 }

@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { ShoppingBag } from 'lucide-react'
+import { useCart } from '@/lib/cart-context'
 
 const navLinks = [
   { label: 'Tratamientos', href: '#tratamientos' },
@@ -14,6 +16,7 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { totalItems, openCart } = useCart()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -52,25 +55,42 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#cita"
-          className="hidden md:block font-manrope text-xs font-semibold tracking-[0.2em] uppercase px-6 py-2.5 bg-champagne text-white hover:bg-champagne/85 transition-all duration-300 rounded-sm"
-        >
-          Pedir cita
-        </a>
+        <div className="flex items-center gap-1 md:gap-4">
+          <button
+            onClick={openCart}
+            aria-label="Ver carrito"
+            className={`relative p-2 transition-colors duration-300 ${
+              scrolled ? 'text-base hover:text-champagne' : 'text-white hover:text-champagne-light'
+            }`}
+          >
+            <ShoppingBag size={20} strokeWidth={1.5} />
+            {totalItems > 0 && (
+              <span className="absolute top-0 right-0 flex items-center justify-center min-w-[17px] h-[17px] px-1 bg-champagne text-white text-[10px] font-semibold rounded-full leading-none">
+                {totalItems}
+              </span>
+            )}
+          </button>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden flex flex-col gap-[6px] p-2 ${
-            scrolled ? 'text-base' : 'text-white'
-          }`}
-          aria-label="Abrir menú"
-        >
-          <span className={`block w-6 h-[1px] bg-current transition-all origin-center ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
-          <span className={`block w-6 h-[1px] bg-current transition-all ${isOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`block w-6 h-[1px] bg-current transition-all origin-center ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
-        </button>
+          <a
+            href="#cita"
+            className="hidden md:block font-manrope text-xs font-semibold tracking-[0.2em] uppercase px-6 py-2.5 bg-champagne text-white hover:bg-champagne/85 transition-all duration-300 rounded-sm"
+          >
+            Pedir cita
+          </a>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden flex flex-col gap-[6px] p-2 ${
+              scrolled ? 'text-base' : 'text-white'
+            }`}
+            aria-label="Abrir menú"
+          >
+            <span className={`block w-6 h-[1px] bg-current transition-all origin-center ${isOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+            <span className={`block w-6 h-[1px] bg-current transition-all ${isOpen ? 'opacity-0 scale-x-0' : ''}`} />
+            <span className={`block w-6 h-[1px] bg-current transition-all origin-center ${isOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

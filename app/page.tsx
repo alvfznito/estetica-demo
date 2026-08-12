@@ -14,26 +14,31 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import StickyCTA from '@/components/StickyCTA'
 import Schemas from '@/components/Schemas'
+import CartDrawer from '@/components/CartDrawer'
+import { CartProvider } from '@/lib/cart-context'
 
 export default function Home() {
   return (
-    <main>
-      <Schemas />
-      <Navbar />
-      <Hero />
-      <TrustBar />
-      <WhyUs />
-      <Services />
-      <Productos />
-      <BeforeAfter />
-      <Team />
-      <Reviews />
-      <CTA />
-      <ComoLlegar />
-      <FAQ />
-      <Footer />
-      <WhatsAppButton />
-      <StickyCTA />
-    </main>
+    <CartProvider>
+      <main>
+        <Schemas />
+        <Navbar />
+        <Hero />
+        <TrustBar />
+        <WhyUs />
+        <Services />
+        <Productos />
+        <BeforeAfter />
+        <Team />
+        <Reviews />
+        <CTA />
+        <ComoLlegar />
+        <FAQ />
+        <Footer />
+        <WhatsAppButton />
+        <StickyCTA />
+        <CartDrawer />
+      </main>
+    </CartProvider>
   )
 }
