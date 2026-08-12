@@ -1,27 +1,46 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google'
+import { Cormorant_Garamond, Manrope } from 'next/font/google'
 import './globals.css'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-cormorant',
   display: 'swap',
 })
 
-const dmSans = DM_Sans({
+const manrope = Manrope({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  variable: '--font-dm',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-manrope',
   display: 'swap',
 })
 
+const SITE_URL = 'https://centrolumiere.vercel.app'
+
 export const metadata: Metadata = {
-  title: 'Centro Belleza Lumière | Estética Premium',
+  metadataBase: new URL(SITE_URL),
+  title: 'Centro Lumière — Estética y bienestar en Valdepeñas',
   description:
-    'Centro de estética premium en tu ciudad. Depilación láser, tratamientos faciales, masajes terapéuticos y maquillaje profesional. Primera consulta gratuita.',
-  keywords: 'estética, belleza, depilación láser, facial, masaje, manicura, lumière',
+    'Centro de estética y bienestar en Valdepeñas. Tratamientos faciales, corporales y productos naturales. Citas confirmadas por WhatsApp.',
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: 'Centro Lumière — Estética y bienestar en Valdepeñas',
+    description:
+      'Tratamientos faciales, corporales y productos naturales. Citas por WhatsApp.',
+    url: SITE_URL,
+    siteName: 'Centro Lumière',
+    images: [{ url: '/hero-poster.jpg' }],
+    locale: 'es_ES',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Centro Lumière — Estética y bienestar en Valdepeñas',
+    description: 'Tratamientos faciales, corporales y productos naturales.',
+    images: ['/hero-poster.jpg'],
+  },
 }
 
 export default function RootLayout({
@@ -30,8 +49,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body className="font-dm bg-white text-negro antialiased">{children}</body>
+    <html lang="es" className={`${cormorant.variable} ${manrope.variable}`}>
+      <body className="font-manrope bg-crudo text-base antialiased">{children}</body>
     </html>
   )
 }

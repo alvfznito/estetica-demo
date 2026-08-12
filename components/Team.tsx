@@ -3,63 +3,53 @@ import Image from 'next/image'
 const team = [
   {
     name: 'María García',
-    title: 'Directora & Esteticista Senior',
-    specialty: 'Especialista en tratamientos faciales avanzados y depilación láser. Certificada por la CIDESCO Internacional.',
+    title: 'Directora & esteticista senior',
+    specialty:
+      'Especialista en tratamientos faciales avanzados y depilación láser. Certificada por CIDESCO Internacional.',
     years: '12 años de experiencia',
-    image:
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+    image: '/img/team-maria.jpg',
+    alt: 'María García, directora del Centro Lumière',
   },
   {
     name: 'Laura Martínez',
-    title: 'Esteticista & Masajista',
-    specialty: 'Especialista en masajes terapéuticos, tratamientos corporales y técnicas de drenaje linfático.',
+    title: 'Esteticista & masajista',
+    specialty:
+      'Especialista en masajes terapéuticos, tratamientos corporales y drenaje linfático.',
     years: '8 años de experiencia',
-    image:
-      'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+    image: '/img/team-laura.jpg',
+    alt: 'Laura Martínez, esteticista del Centro Lumière',
   },
 ]
 
 export default function Team() {
   return (
-    <section id="equipo" className="py-28 px-6 bg-nude/15">
+    <section id="equipo" className="py-24 px-6 bg-crudo">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <p className="font-dm text-xs tracking-[0.35em] uppercase text-dorado mb-5">
+        <div className="text-center mb-16">
+          <p className="font-manrope text-xs tracking-[0.35em] uppercase text-champagne mb-5">
             Quiénes somos
           </p>
-          <h2 className="font-cormorant text-4xl md:text-5xl font-light text-negro">
-            Nuestro Equipo
+          <h2 className="font-cormorant text-4xl md:text-5xl font-light text-base">
+            Nuestro equipo
           </h2>
-          <div className="w-10 h-px bg-dorado mx-auto mt-7" />
+          <div className="w-10 h-px bg-champagne mx-auto mt-7" />
         </div>
 
-        {/* Team grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20">
-          {team.map((member, i) => (
-            <div key={i} className="flex flex-col items-center text-center">
-              {/* Portrait */}
-              <div className="relative w-44 h-44 rounded-full overflow-hidden mb-7 ring-1 ring-nude">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                />
+          {team.map((m) => (
+            <div key={m.name} className="flex flex-col items-center text-center">
+              <div className="relative w-44 h-44 rounded-full overflow-hidden mb-7 ring-1 ring-champagne/40">
+                <Image src={m.image} alt={m.alt} fill sizes="180px" className="object-cover" />
               </div>
-
-              {/* Info */}
-              <h3 className="font-cormorant text-2xl font-medium text-negro mb-1">
-                {member.name}
-              </h3>
-              <p className="font-dm text-xs tracking-[0.15em] uppercase text-dorado mb-4">
-                {member.title}
+              <h3 className="font-cormorant text-2xl font-medium text-base mb-1">{m.name}</h3>
+              <p className="font-manrope text-xs tracking-[0.15em] uppercase text-champagne mb-4">
+                {m.title}
               </p>
-              <p className="font-dm text-sm text-negro/55 leading-loose max-w-xs mb-3">
-                {member.specialty}
+              <p className="font-manrope text-sm text-muted leading-loose max-w-xs mb-3">
+                {m.specialty}
               </p>
-              <p className="font-dm text-[10px] tracking-[0.2em] uppercase text-negro/35">
-                {member.years}
+              <p className="font-manrope text-[10px] tracking-[0.2em] uppercase text-muted">
+                {m.years}
               </p>
             </div>
           ))}

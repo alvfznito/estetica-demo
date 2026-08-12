@@ -9,14 +9,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        rosa: '#F2C4CE',
-        nude: '#E8D5C4',
-        negro: '#1A1A1A',
-        dorado: '#C9A84C',
+        // Paleta Lumière
+        base: '#2E2620',           // marrón chocolate profundo
+        crudo: '#F5EFE8',          // fondo primario
+        beige: '#EBE3D7',          // fondo secundario
+        champagne: '#7A6740',      // acento — oscurecido para pasar contraste 4.5:1 en labels 12px
+        'champagne-light': '#B8A88A', // versión clara para líneas/badges grandes sobre fondo oscuro
+        salvia: '#4C6640',         // oscurecido desde #7A8B6D para AA
+        muted: '#6E645A',          // oscurecido desde #8F8478 para AA
+        white: '#FDFCFA',
+        // Compatibilidad con nombres antiguos ya usados en componentes
+        rosa: '#EBE3D7',
+        nude: '#EBE3D7',
+        negro: '#2E2620',
+        dorado: '#7A6740',
       },
       fontFamily: {
         cormorant: ['var(--font-cormorant)', 'Georgia', 'serif'],
-        dm: ['var(--font-dm)', 'system-ui', 'sans-serif'],
+        manrope: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
+        dm: ['var(--font-manrope)', 'system-ui', 'sans-serif'], // alias
+      },
+      boxShadow: {
+        soft: '0 2px 12px rgba(46,38,32,0.04)',
+      },
+      borderRadius: {
+        sm: '2px',
       },
     },
   },

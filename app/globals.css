@@ -6,12 +6,21 @@ html {
   scroll-behavior: smooth;
 }
 
-::selection {
-  background-color: #F2C4CE;
-  color: #1A1A1A;
-}
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  background-color: #F5EFE8;
+  color: #2E2620;
+}
+
+::selection {
+  background-color: #B8A88A;
+  color: #2E2620;
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 70px;
+  }
 }

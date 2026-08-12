@@ -1,83 +1,88 @@
-const serviceLinks = [
-  'Depilación Láser',
-  'Tratamiento Facial',
-  'Manicura & Pedicura',
-  'Masajes',
-  'Tratamiento Corporal',
-  'Maquillaje Profesional',
-]
+import { TEL, TEL_INTL, ADDRESS, HORARIO_SHORT } from '@/lib/data'
 
 export default function Footer() {
   return (
-    <footer className="bg-negro border-t border-white/8 py-16 px-6">
+    <footer className="bg-base border-t border-white/8 py-14 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-14 mb-14">
-          {/* Brand */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
-            <h3 className="font-cormorant text-3xl font-semibold tracking-[0.2em] text-white mb-4">
+            <h3 className="font-cormorant text-3xl font-semibold tracking-[0.15em] text-champagne-light mb-3">
               Lumière
             </h3>
-            <p className="font-dm text-sm text-white/40 leading-loose max-w-xs">
-              Centro de estética premium donde cada tratamiento es un ritual de belleza y bienestar.
+            <p className="font-manrope text-sm text-white/50 leading-loose max-w-xs">
+              Centro de estética y bienestar en Valdepeñas. Tratamientos naturales, resultados
+              reales.
             </p>
           </div>
 
-          {/* Services */}
           <div>
-            <p className="font-dm text-[10px] tracking-[0.3em] uppercase text-white/30 mb-5">
-              Servicios
+            <p className="font-manrope text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">
+              Explora
             </p>
-            <ul className="space-y-2.5">
-              {serviceLinks.map((s) => (
-                <li key={s}>
-                  <a
-                    href="#servicios"
-                    className="font-dm text-sm text-white/40 hover:text-white/70 transition-colors duration-200"
-                  >
-                    {s}
-                  </a>
-                </li>
-              ))}
+            <ul className="space-y-2.5 font-manrope text-sm">
+              <li>
+                <a href="#tratamientos" className="text-white/50 hover:text-champagne-light transition-colors">
+                  Tratamientos
+                </a>
+              </li>
+              <li>
+                <a href="#productos" className="text-white/50 hover:text-champagne-light transition-colors">
+                  Productos
+                </a>
+              </li>
+              <li>
+                <a href="#equipo" className="text-white/50 hover:text-champagne-light transition-colors">
+                  Equipo
+                </a>
+              </li>
+              <li>
+                <a href="#resenas" className="text-white/50 hover:text-champagne-light transition-colors">
+                  Reseñas
+                </a>
+              </li>
+              <li>
+                <a href="#horarios" className="text-white/50 hover:text-champagne-light transition-colors">
+                  Horarios
+                </a>
+              </li>
+              <li>
+                <a href="#cita" className="text-white/50 hover:text-champagne-light transition-colors">
+                  Pedir cita
+                </a>
+              </li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <p className="font-dm text-[10px] tracking-[0.3em] uppercase text-white/30 mb-5">
+            <p className="font-manrope text-[10px] tracking-[0.3em] uppercase text-white/40 mb-4">
               Contacto
             </p>
-            <ul className="space-y-3.5">
-              <li className="font-dm text-sm text-white/40">Calle Principal 1, Tu ciudad</li>
+            <ul className="space-y-2.5 font-manrope text-sm text-white/50">
+              <li>{ADDRESS}</li>
               <li>
                 <a
-                  href="tel:000000000"
-                  className="font-dm text-sm text-white/40 hover:text-white/70 transition-colors"
+                  href={`tel:${TEL_INTL}`}
+                  className="font-cormorant text-lg text-white hover:text-champagne-light transition-colors"
                 >
-                  000 000 000
+                  {TEL}
                 </a>
               </li>
-              <li>
-                <a
-                  href="mailto:info@lumiere.es"
-                  className="font-dm text-sm text-white/40 hover:text-white/70 transition-colors"
-                >
-                  info@lumiere.es
-                </a>
-              </li>
-              <li className="font-dm text-sm text-white/40">L–V 10:00–20:00 · S 10:00–15:00</li>
+              <li>{HORARIO_SHORT}</li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-dm text-xs text-white/25">
-            © 2024 Centro Belleza Lumière. Todos los derechos reservados.
-          </p>
-          <p className="font-dm text-xs text-white/20">
-            Web by{" "}
-            <a href="https://muestrateagency.netlify.app" className="hover:text-white/40 transition-colors" target="_blank" rel="noopener noreferrer">
-              MUESTRATE!
+        <div className="border-t border-white/8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 font-manrope text-xs">
+          <p className="text-white/30">© {new Date().getFullYear()} Centro Lumière</p>
+          <p className="text-white/30">
+            Web demo creada por{' '}
+            <a
+              href="https://muestrate.agency"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-champagne-light underline underline-offset-4 hover:text-white transition-colors"
+            >
+              Muéstrate
             </a>
           </p>
         </div>

@@ -2,93 +2,59 @@ import Image from 'next/image'
 
 const cases = [
   {
-    title: 'Tratamiento Facial Premium',
+    title: 'Tratamiento facial premium',
     subtitle: 'Protocolo hidratación & luminosidad — 4 sesiones',
-    before: {
-      src: 'https://images.unsplash.com/photo-1730288951113-9cc087c14b83?auto=format&fit=crop&w=600&q=80',
-      alt: 'Antes del tratamiento facial',
-    },
-    after: {
-      src: 'https://images.unsplash.com/photo-1581182815808-b6eb627a8798?auto=format&fit=crop&w=600&q=80',
-      alt: 'Después del tratamiento facial',
-    },
+    before: { src: '/img/ba-facial-antes.jpg', alt: 'Antes del tratamiento facial' },
+    after: { src: '/img/ba-facial-despues.jpg', alt: 'Después del tratamiento facial' },
   },
   {
-    title: 'Depilación Láser Integral',
+    title: 'Depilación láser integral',
     subtitle: 'Eliminación definitiva del vello — 6 sesiones',
-    before: {
-      src: 'https://images.unsplash.com/photo-1555820585-c5ae44394b79?auto=format&fit=crop&w=600&q=80',
-      alt: 'Antes de la depilación láser',
-    },
-    after: {
-      src: 'https://images.unsplash.com/photo-1551184451-76b762941ad6?auto=format&fit=crop&w=600&q=80',
-      alt: 'Después de la depilación láser',
-    },
+    before: { src: '/img/ba-laser-antes.jpg', alt: 'Antes de la depilación láser' },
+    after: { src: '/img/ba-laser-despues.jpg', alt: 'Después de la depilación láser' },
   },
 ]
 
 export default function BeforeAfter() {
   return (
-    <section className="py-28 px-6 bg-white">
+    <section className="py-24 px-6 bg-crudo">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <p className="font-dm text-xs tracking-[0.35em] uppercase text-dorado mb-5">
+        <div className="text-center mb-16">
+          <p className="font-manrope text-xs tracking-[0.35em] uppercase text-champagne mb-5">
             Resultados reales
           </p>
-          <h2 className="font-cormorant text-4xl md:text-5xl font-light text-negro">
+          <h2 className="font-cormorant text-4xl md:text-5xl font-light text-base">
             Antes &amp; Después
           </h2>
-          <div className="w-10 h-px bg-dorado mx-auto mt-7" />
-          <p className="font-dm text-sm text-negro/50 mt-7 max-w-md mx-auto leading-loose">
+          <div className="w-10 h-px bg-champagne mx-auto mt-7" />
+          <p className="font-manrope text-sm text-muted mt-6 max-w-md mx-auto leading-loose">
             Imágenes reales de clientas que han confiado en nuestros tratamientos.
           </p>
         </div>
 
-        {/* Cases */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {cases.map((c, i) => (
-            <div key={i}>
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {/* Before */}
-                <div className="relative">
-                  <div className="relative aspect-[3/4] overflow-hidden">
-                    <Image
-                      src={c.before.src}
-                      alt={c.before.alt}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-0 inset-x-0 bg-negro/55 py-2.5 text-center">
-                      <span className="font-dm text-[10px] tracking-[0.25em] uppercase text-white/90">
-                        Antes
-                      </span>
-                    </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {cases.map((c) => (
+            <div key={c.title}>
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
+                  <Image src={c.before.src} alt={c.before.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
+                  <div className="absolute bottom-0 inset-x-0 bg-base/75 py-2 text-center">
+                    <span className="font-manrope text-[10px] tracking-[0.25em] uppercase text-white/90">
+                      Antes
+                    </span>
                   </div>
                 </div>
-
-                {/* After */}
-                <div className="relative">
-                  <div className="relative aspect-[3/4] overflow-hidden">
-                    <Image
-                      src={c.after.src}
-                      alt={c.after.alt}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-0 inset-x-0 bg-dorado/80 py-2.5 text-center">
-                      <span className="font-dm text-[10px] tracking-[0.25em] uppercase text-white">
-                        Después
-                      </span>
-                    </div>
+                <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
+                  <Image src={c.after.src} alt={c.after.alt} fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover" />
+                  <div className="absolute bottom-0 inset-x-0 bg-champagne py-2 text-center">
+                    <span className="font-manrope text-[10px] tracking-[0.25em] uppercase text-white">
+                      Después
+                    </span>
                   </div>
                 </div>
               </div>
-
-              <h3 className="font-cormorant text-2xl font-medium text-negro mb-1.5">
-                {c.title}
-              </h3>
-              <p className="font-dm text-sm text-negro/50">{c.subtitle}</p>
+              <h3 className="font-cormorant text-2xl font-medium text-base mb-1">{c.title}</h3>
+              <p className="font-manrope text-sm text-muted">{c.subtitle}</p>
             </div>
           ))}
         </div>

@@ -1,11 +1,13 @@
+import { wa } from '@/lib/data'
+
 export default function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/34000000000"
+      href={wa('Hola, quiero pedir cita.')}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 bg-rosa text-negro font-dm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 px-4 py-3"
+      className="fixed bottom-6 right-6 z-50 items-center gap-2.5 bg-[#25d366] text-white shadow-lg hover:-translate-y-0.5 transition-all duration-300 px-4 py-3 rounded-sm hidden md:flex"
     >
       <svg
         className="w-5 h-5 flex-shrink-0"
