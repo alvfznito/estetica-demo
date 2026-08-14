@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta Lumière
+        // Paleta Estética Sonia (antes "Lumière")
         base: '#2E2620',           // marrón chocolate profundo
         crudo: '#F5EFE8',          // fondo primario
         beige: '#EBE3D7',          // fondo secundario
-        champagne: '#7A6740',      // acento — oscurecido para pasar contraste 4.5:1 en labels 12px
-        'champagne-light': '#B8A88A', // versión clara para líneas/badges grandes sobre fondo oscuro
+        champagne: '#C2185B',      // color de marca — blanco encima: 5.87:1, sobre crudo: 5.14:1
+        'champagne-light': '#e181a7', // versión clara — sobre fondo oscuro (base): 5.59:1
         salvia: '#4C6640',         // oscurecido desde #7A8B6D para AA
         muted: '#6E645A',          // oscurecido desde #8F8478 para AA
         white: '#FDFCFA',
@@ -22,7 +22,7 @@ const config: Config = {
         rosa: '#EBE3D7',
         nude: '#EBE3D7',
         negro: '#2E2620',
-        dorado: '#7A6740',
+        dorado: '#C2185B',
       },
       fontFamily: {
         cormorant: ['var(--font-cormorant)', 'Georgia', 'serif'],

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
             <h3 className="font-cormorant text-3xl font-semibold tracking-[0.15em] text-champagne-light mb-3">
-              Lumière
+              Sonia
             </h3>
             <p className="font-manrope text-sm text-white/50 leading-loose max-w-xs">
               Centro de estética y bienestar en Valdepeñas. Tratamientos naturales, resultados
@@ -73,7 +73,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/8 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 font-manrope text-xs">
-          <p className="text-white/30">© {new Date().getFullYear()} Centro Lumière</p>
+          <p className="text-white/30">© {new Date().getFullYear()} Estética Sonia</p>
           <p className="text-white/30">
             Web demo creada por{' '}
             <a

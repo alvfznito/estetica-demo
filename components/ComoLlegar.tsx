@@ -29,7 +29,7 @@ export default function ComoLlegar() {
           {/* Mapa */}
           <div className="relative w-full min-h-[380px] lg:min-h-full rounded-sm overflow-hidden shadow-soft">
             <iframe
-              title="Ubicación Centro Lumière — Calle Real 12, Valdepeñas"
+              title="Ubicación Estética Sonia — Calle Real 12, Valdepeñas"
               src="https://www.google.com/maps?q=Calle%20Real%2012%2C%20Valdepe%C3%B1as%2C%20Ciudad%20Real&z=16&output=embed"
               width="100%"
               height="100%"

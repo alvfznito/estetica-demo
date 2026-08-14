@@ -37,7 +37,7 @@ export default function Navbar() {
             scrolled ? 'text-base hover:text-champagne' : 'text-white hover:text-champagne-light'
           }`}
         >
-          Lumière
+          Sonia
         </Link>
 
         {/* Desktop */}

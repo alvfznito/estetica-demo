@@ -3,7 +3,7 @@ import { faqs } from '@/lib/data'
 const beautySalonSchema = {
   '@context': 'https://schema.org',
   '@type': 'BeautySalon',
-  name: 'Centro Lumière',
+  name: 'Estética Sonia',
   description:
     'Centro de estética y bienestar en Valdepeñas. Tratamientos faciales, corporales y productos naturales. Citas confirmadas por WhatsApp.',
   url: 'https://centrolumiere.vercel.app',

@@ -26,9 +26,9 @@ export default function Hero() {
           Estética y bienestar · Valdepeñas
         </p>
         <h1 className="font-cormorant font-light text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] text-white leading-[1.05] mb-6">
-          Centro
+          Estética
           <br />
-          <em className="not-italic italic text-champagne-light">Lumière</em>
+          <em className="not-italic italic text-champagne-light">Sonia</em>
         </h1>
         <div className="w-16 h-px bg-champagne-light mx-auto my-6" />
         <p className="font-manrope text-sm md:text-base text-white/85 mb-10 max-w-lg mx-auto leading-loose tracking-wide">

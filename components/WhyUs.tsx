@@ -28,7 +28,7 @@ export default function WhyUs() {
             Nuestra diferencia
           </p>
           <h2 className="font-cormorant text-4xl md:text-5xl font-light text-base">
-            ¿Por qué Lumière?
+            ¿Por qué Estética Sonia?
           </h2>
           <div className="w-10 h-px bg-champagne mx-auto mt-7" />
         </div>

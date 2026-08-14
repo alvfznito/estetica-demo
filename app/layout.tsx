@@ -21,23 +21,23 @@ const SITE_URL = 'https://centrolumiere.vercel.app'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'Centro Lumière — Estética y bienestar en Valdepeñas',
+  title: 'Estética Sonia — Estética y bienestar en Valdepeñas',
   description:
     'Centro de estética y bienestar en Valdepeñas. Tratamientos faciales, corporales y productos naturales. Citas confirmadas por WhatsApp.',
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'Centro Lumière — Estética y bienestar en Valdepeñas',
+    title: 'Estética Sonia — Estética y bienestar en Valdepeñas',
     description:
       'Tratamientos faciales, corporales y productos naturales. Citas por WhatsApp.',
     url: SITE_URL,
-    siteName: 'Centro Lumière',
+    siteName: 'Estética Sonia',
     images: [{ url: '/hero-poster.jpg' }],
     locale: 'es_ES',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Centro Lumière — Estética y bienestar en Valdepeñas',
+    title: 'Estética Sonia — Estética y bienestar en Valdepeñas',
     description: 'Tratamientos faciales, corporales y productos naturales.',
     images: ['/hero-poster.jpg'],
   },

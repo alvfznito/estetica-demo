@@ -107,7 +107,7 @@ export const products: Product[] = [
     name: 'Tarjeta Regalo',
     desc: 'Canjeable en tratamientos o productos',
     longDesc:
-      'La tarjeta regalo Centro Lumière, canjeable en cualquiera de nuestros tratamientos o productos. El detalle perfecto para regalar un momento de bienestar. En tu tienda real, el importe sería configurable por la clienta antes de añadirlo al carrito — aquí se muestra con un importe orientativo.',
+      'La tarjeta regalo Estética Sonia, canjeable en cualquiera de nuestros tratamientos o productos. El detalle perfecto para regalar un momento de bienestar. En tu tienda real, el importe sería configurable por la clienta antes de añadirlo al carrito — aquí se muestra con un importe orientativo.',
     price: 30,
     images: ['/img/producto-tarjeta-regalo.jpg', ...GALLERY_REGALO],
   },

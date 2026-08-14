@@ -8,7 +8,7 @@ const team = [
       'Especialista en tratamientos faciales avanzados y depilación láser. Certificada por CIDESCO Internacional.',
     years: '12 años de experiencia',
     image: '/img/team-maria.jpg',
-    alt: 'María García, directora del Centro Lumière',
+    alt: 'María García, directora de Estética Sonia',
   },
   {
     name: 'Laura Martínez',
@@ -17,7 +17,7 @@ const team = [
       'Especialista en masajes terapéuticos, tratamientos corporales y drenaje linfático.',
     years: '8 años de experiencia',
     image: '/img/team-laura.jpg',
-    alt: 'Laura Martínez, esteticista del Centro Lumière',
+    alt: 'Laura Martínez, esteticista de Estética Sonia',
   },
 ]
 

@@ -35,7 +35,7 @@ interface CartContextValue {
 
 const CartContext = createContext<CartContextValue | null>(null)
 
-const STORAGE_KEY = 'lumiere-cart-demo'
+const STORAGE_KEY = 'sonia-cart-demo'
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
